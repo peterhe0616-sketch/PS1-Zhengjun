@@ -95,12 +95,17 @@ compiler to **pdfLaTeX**.
 
 ## AI-use disclosure
 
-The research question, the payoff design, both corrections and both sweeps are the
-author's. An AI text assistant (DeepSeek, `deepseek-v4-flash`, 6 September 2026) was
-used for literature comparison and for debugging the client-side JavaScript of the
-interactive game. Initial reasoning and handwritten reflection are Human-Only. The
-author remains responsible for every claim, citation and computation. Full disclosure
-is in Appendix A.1 of the paper.
+All substantive work — the research question, the payoff law, the strategy matrix, both
+corrections to that law, the threshold `delta + pF > 25`, the computational checks, the
+game, the notebook and the argument of the paper — is the author's own. Every source was
+read and every number re-derived by the author, who played the game and ran the checker.
+
+A generative AI assistant (DeepSeek, `deepseek-v4-flash`, 6 September 2026) was used
+only for LaTeX typesetting and layout, and for brainstorming possible literature to look
+up. It did not devise the model, run any computation, or write the argument. All
+literature it suggested was independently located and verified before citation. Initial
+reasoning and handwritten reflection are Human-Only. Full disclosure is in Appendix A.1
+of the paper.
 
 ## License and reuse
 
