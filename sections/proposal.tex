@@ -1,20 +1,20 @@
 \section{Three connected research questions}
-Generating a deliverable, and the documentation meant to vouch for it, is now nearly free, while independent verification remains costly. When anyone can fabricate the evidence, the question is not what to disclose but which rules make truthful disclosure stable. Stakeholders are plugin-marketplace developers, the platforms setting the rules, and the users and journalists who must act on a claim.
+Generating a deliverable, and the documentation meant to vouch for it, is now nearly free while independent verification remains costly. When anyone can fabricate the evidence, the question is not what to disclose but which rules make truthful disclosure stable. The stakeholders are plugin-marketplace developers, the platforms setting the rules, and the users and journalists who act on a claim.
 
 Three foundations frame the problem. Akerlof~\cite{akerlof1970} shows unverifiable quality drives good sellers out of a market. Shalvi et al.~\cite{shalvi2012} show dishonesty grows with available justifications. Buneman et al.~\cite{buneman2001} define provenance as structured lineage, but the producer writes the record, so the trace itself can be forged.
 
-\textbf{Q1---Economics:} Which mechanisms---a fine $pF$ on detected fakes, or a market premium $\Delta$ for verifiable provenance---make the honest strategy a Nash equilibrium when trace files are free to generate and to fake?\par
+\textbf{Q1---Economics:} Which mechanisms---a fine $pF$ on detected fakes, or a market premium $\Delta$ for verifiable provenance---make honesty a Nash equilibrium when trace files are free to generate and to fake?\par
 \textbf{Q2---Computation:} What trace format and verifier make a per-claim declaration checkable at near-zero cost, without trusting the producer's own record?\par
-\textbf{Q3---Behavior:} Does traceability reduce dishonesty by shrinking the justification space, or does effortless checking produce moral licensing that increases it?
+\textbf{Q3---Behavior:} Does traceability shrink the justification space, or does effortless checking produce moral licensing that increases dishonesty?
 
-The disciplines are jointly necessary: a rule requiring trace files is empty unless a fake can be cheaply detected, and a rule that is enforceable may still fail if checking licenses inattention. Figure~\ref{fig:teaser} connects the three.
+The three are jointly necessary: a rule requiring trace files is empty unless a fake can be cheaply detected, and an enforceable rule may still fail if checking licenses inattention. Figure~\ref{fig:teaser} connects them.
 
 \section{Answer to Q1: incentives and intellectual lineage}
-\textbf{Hypothesis.} Two mechanisms can make honesty optimal, and either suffices. A penalty $pF$ falls only on a detected fake; a premium $\Delta$ is earned only by a verifiable trace file. Honesty is the unique best response when $\Delta + pF$ exceeds the fake's cost advantage.
+\textbf{Hypothesis.} Either mechanism suffices. A penalty $pF$ falls only on a detected fake; a premium $\Delta$ is earned only by a verifiable trace file. Honesty is the unique best response when $\Delta + pF$ exceeds the fake's cost advantage.
 
-\textbf{Model.} Developers choose an action $a_i \in \{\text{honest, none, fake}\}$ and verifier enrolment $v_i \in \{0,1\}$; a platform commits to $(m,p,F)$ for mandatory attachment, spot-check rate and fine, and the market sets a premium $\Delta$ for verifiable provenance. The platform sets rules, developers act, detected fakes pay $F$, and buyers pay $\Delta$ only for a trace they can check. Payoff is market benefit plus premium if honest, minus cost, plus stability if enrolled, minus expected fine if faking. A fake earns the same base market benefit as an honest deliverable, because buyers cannot observe truth before purchase, while saving cost. Information is incomplete. The solution concept is Nash equilibrium in pure strategies~\cite{nash1950}, with $(m,p,F)$ exogenous; since the platform chooses the rules that developers best-respond to, this is a mechanism-design problem. I distinguish inherited quantities (Akerlof's benchmark), simulated quantities (this payoff law) and hypothetical ones (real platforms).
+\textbf{Model.} A developer chooses an action $a_i \in \{\text{honest, none, fake}\}$ and verifier enrolment $v_i \in \{0,1\}$. A platform commits to $(m,p,F)$ for mandatory attachment, spot-check rate and fine; the market sets $\Delta$. Payoff is market benefit plus $\Delta$ if honest, minus cost, plus stability if enrolled, minus $pF$ if faking. A fake earns the same base benefit as an honest deliverable, since buyers cannot observe truth before purchase, while saving cost. Information is incomplete. The solution concept is Nash equilibrium in pure strategies~\cite{nash1950}, with $(m,p,F)$ exogenous; because the platform chooses the rules developers best-respond to, this is a mechanism-design problem.
 
-\begin{table}[h]\caption{Strategy matrix with no rules ($p=F=0$). Left: no premium, so faking wins. Right: a premium for verifiable provenance, so honesty wins without any enforcement.}\label{tab:matrix}
+\begin{table}[h]\caption{Strategy matrix with no rules ($p=F=0$). Left: no premium, so faking wins. Right: a premium, so honesty wins with no enforcement.}\label{tab:matrix}
 \renewcommand{\arraystretch}{1.18}
 \begin{tabular}{@{}lrr@{}}\toprule
  & \textbf{$\Delta=0$} & \textbf{$\Delta=30$} \\\midrule
@@ -23,46 +23,41 @@ B \quad no trace     & 120 & 120 \\
 C \quad faked trace  & \textbf{160}$^{\star}$ & 160 \\\bottomrule
 \end{tabular}\end{table}
 
-Without a premium, faking wins by $25$---exactly the cost it avoids---and only a fine can deter it: $p^{*}=0.5$ at $F=50$. With a premium, honesty wins by being worth more and needs no enforcement. The mechanisms substitute: $\Delta=15$ halves the required spot-check rate to $0.2$, and $\Delta=25$ removes the need to fine at all.
+Without a premium, faking wins by $25$---exactly the cost it avoids---and only a fine can deter it: $p^{*}=0.5$ at $F=50$. With a premium, honesty wins by being worth more. The mechanisms substitute: $\Delta=15$ halves the required spot-check rate to $0.2$, and $\Delta=25$ removes the need to fine at all.
 
-\textbf{What the benchmark leaves unresolved.} Akerlof shows unverifiable quality drives good sellers out of a market, but fixes buyers' beliefs rather than asking how a costly signal forms them. Spence~\cite{spence1973} supplies that logic: a premium exists only if the signal separates types. Neither says which rule restores honesty when the certification instrument is itself freely forgeable.
+\textbf{Unresolved.} Akerlof fixes buyers' beliefs rather than asking how a costly signal forms them. Spence~\cite{spence1973} supplies that logic: a premium exists only if the signal separates types.
 
 \section{Answer to Q2: method and evaluation}
-\textbf{Method.} A browser-run $3\times2$ game on a Hugging Face Space, client-side HTML, CSS and JavaScript; the payoff law is documented in Appendix~\ref{app:tech}. The algorithm enumerates the six cells and finds the best response.
+\textbf{Method.} A browser-run $3\times2$ game on a Hugging Face Space, client-side HTML, CSS and JavaScript; the payoff law is in Appendix~\ref{app:tech}. The algorithm enumerates the six cells and finds the best response.
 
-\textbf{Correction to the baseline.} The first deployed version summed a cost, a benefit and a stability index. The notebook exposed the error: cost and benefit have opposite signs, so summing them scored honesty as better on both. The sweep returned $p^{*}=0$, meaning faking was never attractive and the question could not be posed. The corrected law enters cost negatively and gives the fake the same market benefit as an honest deliverable. See Appendix~\ref{app:develop}.
+\textbf{Baseline correction.} The first deployed version summed a cost, a benefit and a stability index. Cost and benefit have opposite signs, so summing them scored honesty as better on both; the sweep returned $p^{*}=0$, meaning faking was never attractive and the question could not be posed. The corrected law enters cost negatively and gives the fake the same benefit as an honest deliverable. See Appendix~\ref{app:develop}.
 
-\textbf{Baseline, modification, metric, check.} Baseline is the status-quo cell (net $100$); the modification is mandatory attachment plus $p$ and $F$; the metric is the threshold $p^{*}$ at which honest-plus-verified is uniquely best. Five checks pass: with no rules the fake wins; with $p=1,F=100$ honesty is unique; the status quo is unchanged; enrolment is weakly dominant; there are six cells.
+\textbf{Baseline, modification, metric, check.} Baseline is the status-quo cell (net $120$); the modification is mandatory attachment plus $p$ and $F$; the metric is the threshold $p^{*}$ at which honesty is uniquely best. Six checks pass: no rules $\Rightarrow$ fake wins; enforcement alone makes honesty unique; a premium alone ($\Delta=30$, $p=F=0$) also does; the status quo is unchanged; enrolment is weakly dominant; six cells.
 
-\textbf{Result.} At $F=50$, $p^{*}=0.5000$; the required $p$ falls as $F$ rises ($F=100\Rightarrow0.25$; $F=400\Rightarrow0.0625$), and below $F=25$ no $p\le1$ suffices. All results are \emph{simulated}.
+\textbf{Result.} At $F=50$, $p^{*}=0.5000$; the required $p$ falls as $F$ rises ($F=100\Rightarrow0.25$; $F=400\Rightarrow0.0625$), and below $F=25$ no $p\le1$ suffices. All results are \emph{simulated}; the Colab notebook reproduces them from one payoff law.
 
-\clearpage\balance
 \section{Answer to Q3: behavior and competing explanations}
 \textbf{Competing explanations.} Justification: dishonesty grows with available justifications~\cite{shalvi2012}, so traceability should shrink that space. Moral licensing: a visible attestation lets producer and verifier treat the check as discharging responsibility, so the producer shades a claim the verifier no longer examines. They predict opposite effects from the same manipulation.
 
 \textbf{Discriminating evidence.} They separate on verifier attention. Justification predicts less faking with scrutiny unchanged; licensing predicts reduced scrutiny and a fake rate falling less than the attachment rate rises. Measuring both producer choice and check depth discriminates; measuring the fake rate alone cannot.
 
-\textbf{Consequence.} If licensing dominates, verification must not be a binary pass: it should report which claims were recomputed, and $pF$ must be paired with something keeping scrutiny positive, since it deters only if $p$ is real scrutiny.
-
-\textbf{Limits.} A simulated table cannot establish human behavior. The next test is a short experiment crossing trace-file presence with check depth.
+\textbf{Consequence and limits.} If licensing dominates, verification must not be a binary pass: it should report which claims were recomputed, and $pF$ must be paired with something keeping scrutiny positive. A simulated table cannot establish human behavior; the next test crosses trace-file presence with check depth.
 
 \section{Advanced development and future directions}
-\textbf{Foundation.} Akerlof's quality-uncertainty analysis~\cite{akerlof1970}, recognized by the 2001 Nobel Memorial Prize in Economic Sciences~\cite{nobel2001}, establishes that unverifiable quality destroys markets and that institutions making quality observable restore trade. The enduring question is trust under asymmetric information. Spence~\cite{spence1973} supplies the complementary logic: a costly credible signal separates quality, but only if the receiver can read it.
+\textbf{Foundation.} Akerlof's quality-uncertainty analysis~\cite{akerlof1970}, recognized by the 2001 Nobel Memorial Prize in Economic Sciences~\cite{nobel2001}, establishes that unverifiable quality destroys markets and that institutions making quality observable restore trade. The enduring question is trust under asymmetric information. Spence~\cite{spence1973} supplies the complementary logic: a costly credible signal separates quality only if the receiver can read it.
 
-\textbf{The boundary.} Build-layer provenance~\cite{slsa} already exists. Unresolved is the claim layer: per-claim sources and input--output declarations, recomputed at near-zero cost, when the producer writes the record and can therefore forge it.
+\textbf{The boundary and the advance.} Build-layer provenance~\cite{slsa} already exists; unresolved is the claim layer, where per-claim sources and input--output declarations are recomputed at near-zero cost although the producer writes the record and can forge it. Treating $\Delta$ as a constant merely relocates the assumption: a premium exists only if publishing a trace is informative about type, which is Spence's single-crossing condition. If fakers can publish traces as cheaply as honest producers the signal pools, $\Delta$ falls to zero, and enforcement is again the only mechanism. Making $\Delta$ endogenous is the next study; the certification-design result of M{\"a}kimattila et al.~\cite{makimattila2025} is the natural instrument, since there a sender's \emph{choice} among offered tests is itself the signal---but in that model the receiver obtains zero surplus, so a premium does not reach honest producers automatically.
 
-\textbf{Where the premium must come from.} Treating $\Delta$ as a constant merely relocates the assumption. A premium exists only if publishing a trace is informative about type, so that buyers update upward---the single-crossing condition that Spence~\cite{spence1973} requires of any separating signal. If fakers can publish traces as cheaply as honest producers, the signal pools, $\Delta$ collapses to zero, and enforcement is again the only mechanism. Making $\Delta$ endogenous to buyer beliefs is therefore the next study, and the certification-design result of M{\"a}kimattila et al.~\cite{makimattila2025} is the natural instrument: there, what a sender reveals is not only the test outcome but the choice of which test to buy, and selection across tests is itself the signal. Its warning applies directly here---in that model the receiver obtains zero surplus, so a premium does not flow to honest producers automatically, and competition or rule design must be what directs it.
-
-\textbf{The verifier is built for machines.} It recomputes a declared number and returns pass or fail, which a non-specialist cannot interpret. Letting an ordinary user judge a firm's claim, or its data-handling practice, is a problem of cognitive rather than computational cost, where the objective is accurate enough and fast enough rather than perfect.
+\textbf{The verifier is built for machines.} It returns pass or fail, which a non-specialist cannot interpret; letting an ordinary user judge a firm's claim, or its data-handling practice, is a problem of cognitive rather than computational cost, where the objective is accurate enough and fast enough rather than perfect.
 
 \begin{table}[h]\caption{From laureate foundations to a new interdisciplinary contribution.}
-\begin{tabularx}{\columnwidth}{@{}p{1.6cm}Y@{}}\toprule
+\begin{tabularx}{\columnwidth}{@{}p{1.5cm}Y@{}}\toprule
 \textbf{Horizon}&\textbf{Milestone and evidence}\\\midrule
-Foundation&Akerlof (1970): unverifiable quality collapses markets. Spence (1973): a credible signal needs single crossing. M\"akimattila et al. (2025): choice of certification is itself the signal.\\
-PS1&A $3\times2$ game with a verified payoff matrix; two mechanisms located: a fine ($pF$) and a premium ($\Delta$), with $\Delta+pF>25$ required.\\
-Next study&Endogenise $\Delta$ in buyer beliefs: test whether trace publication separates types, or pools and collapses. A test separating justification from licensing.\\
-Longer term&A verifier a non-specialist can use, reporting which claims were checked, at what accuracy and what cost.\\
-2056&Verifiable honesty that is competitively rewarded rather than merely enforced, and readable by any user.\\\bottomrule
+Foundation&Akerlof (1970): unverifiable quality collapses markets. Spence (1973): a credible signal needs single crossing.\\
+PS1&A $3\times2$ game; two mechanisms located, a fine $pF$ and a premium $\Delta$, with $\Delta+pF>25$ required.\\
+Next study&Endogenise $\Delta$ in buyer beliefs: does trace publication separate types or pool?\\
+Longer term&A verifier a non-specialist can use, reporting what was checked, at what accuracy and cost.\\
+2056&Verifiable honesty that is competitively rewarded, not merely enforced, and readable by any user.\\\bottomrule
 \end{tabularx}\end{table}
 
 \noindent\textbf{Expected 2056 Nobel Prize and Turing Award contribution statement.}
@@ -71,11 +66,11 @@ By 2056, I aim to contribute a governed trust infrastructure for an era of free 
 \subsection*{Open Science Statement}
 \textbf{GitHub:} \GitHubLink\\
 \textbf{Google Colab:} \ColabLink\par
-Released: a browser-run simulator and a Colab notebook that re-derives the payoff table and runs the threshold sweep. The simulator is static client-side HTML/CSS/JavaScript with no backend, key or paid service; the notebook needs only Python. Inputs are synthetic: one payoff law read by both. No data are collected. Shortest run: open the notebook and choose \emph{Run all}. Versions are in Appendix~\ref{app:tech}.
+Released: a browser-run simulator and a Colab notebook that re-derives the payoff table and runs both sweeps. The simulator is static client-side HTML/CSS/JavaScript with no backend or key; the notebook needs only Python. Inputs are synthetic: one payoff law read by both. Shortest run: open the notebook and choose \emph{Run all}.
 
 \subsection*{Statement of Contribution to the UN's SDGs}
 \textbf{Hugging Face:} \DemoLink\\
-Through an open-access game, this project supports \textbf{SDG 4---Quality Education}~\cite{sdg4} by helping students and the public learn why honest disclosure requires cheap verification, by comparing the six rule-and-action combinations. No account or installation is needed. A feasible evaluation is a short pre/post question predicting which rule is stable. The resource released is the simulator; learning gains remain to be evaluated.
+Through an open-access game, this project supports \textbf{SDG 4---Quality Education}~\cite{sdg4} by helping students and the public learn why honest disclosure requires cheap verification, by comparing the six rule-and-action combinations. No account or installation is needed. The resource released is the simulator; learning gains remain to be evaluated.
 
 \subsection*{Submission milestones}
-This is v1, submitted September 13, 2026, 11:00 P.M. Beijing time (UTC+8). Class review of two assigned proposals: September 14. Author response to both reviews: September 16, 11:00 P.M. Reviewer follow-up: September 17. Revised submission v2 with its updated sources, code snapshot and artifact links: September 20, 11:00 P.M. Appendix~\ref{app:abstract} records each reflection and revision; row~8 holds the feedback received so far and is marked pending for the peer reviews, which have not yet been received. No reviewer feedback is claimed in this version.
+This is v1, submitted September 13, 2026, 11:00 P.M. Beijing time (UTC+8). Class review: September 14. Author response: September 16. Reviewer follow-up: September 17. Revised submission v2: September 20. Appendix~\ref{app:abstract} records each reflection and revision; row~8 is marked pending, as no peer review has been received.
