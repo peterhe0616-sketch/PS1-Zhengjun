@@ -1,92 +1,65 @@
 <mxfile host="app.diagrams.net" agent="Zhengjun He" version="24.0.0">
-  <diagram id="ps1-teaser-v3" name="Figure 1 - Three disciplines">
-    <mxGraphModel dx="1400" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="372" math="0" shadow="0">
+  <diagram id="ps1-teaser-v4" name="Figure 1 - Three disciplines">
+    <mxGraphModel dx="1400" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="260" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
 
         <mxCell id="p1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#D79B00;strokeWidth=2;arcSize=4;" vertex="1" parent="1">
-          <mxGeometry x="10" y="8" width="300" height="330" as="geometry" />
+          <mxGeometry x="10" y="8" width="280" height="214" as="geometry" />
         </mxCell>
-        <mxCell id="h1" value="Economics" style="text;html=1;align=center;verticalAlign=middle;fontSize=15;fontStyle=1;fontColor=#8A5A00;" vertex="1" parent="1">
-          <mxGeometry x="10" y="16" width="300" height="22" as="geometry" />
+        <mxCell id="h1" value="Economics" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#8A5A00;" vertex="1" parent="1">
+          <mxGeometry x="10" y="16" width="280" height="22" as="geometry" />
         </mxCell>
-        <mxCell id="s1" value="Market failure under forgeable evidence" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#8A5A00;" vertex="1" parent="1">
-          <mxGeometry x="20" y="40" width="280" height="16" as="geometry" />
+        <mxCell id="b1a" value="Generation is free,&#xa;verification is costly" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="20" y="46" width="260" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="b1a" value="Generation is near-free.&#xa;Verification is expensive." style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="20" y="60" width="280" height="28" as="geometry" />
+        <mxCell id="b1b" value="Buyers cannot observe&#xa;quality, so faking pays" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="20" y="88" width="260" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="b1b" value="Buyers cannot observe&#xa;quality before purchase" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="35" y="94" width="250" height="38" as="geometry" />
+        <mxCell id="b1c" value="FINE pF    or    PREMIUM &#916;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE9C7;strokeColor=#D79B00;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#8A5A00;" vertex="1" parent="1">
+          <mxGeometry x="30" y="130" width="240" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="b1c" value="Cheap signals substitute:&#xa;identity, adoption counts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="35" y="138" width="250" height="38" as="geometry" />
-        </mxCell>
-        <mxCell id="b1d" value="Two mechanisms&#xa;FINE  pF   and   PREMIUM  &#916;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE9C7;strokeColor=#D79B00;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#8A5A00;" vertex="1" parent="1">
-          <mxGeometry x="35" y="182" width="250" height="38" as="geometry" />
-        </mxCell>
-        <mxCell id="b1e" value="Unresolved: when the&#xa;evidence itself can be forged" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4E6;strokeColor=#D79B00;dashed=1;fontSize=10;fontColor=#B34700;" vertex="1" parent="1">
-          <mxGeometry x="35" y="226" width="250" height="36" as="geometry" />
-        </mxCell>
-        <mxCell id="r1" value="Akerlof (1970)&#xa;Spence (1973)&#xa;Nash (1950)&#xa;M&#228;kimattila et al. (2025)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D79B00;fontSize=9;fontColor=#666666;align=left;spacingLeft=8;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="35" y="270" width="250" height="60" as="geometry" />
+        <mxCell id="r1" value="Akerlof (1970) &#183; Spence (1973)&#xa;Nash (1950) &#183; M&#228;kimattila et al. (2025)" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#8A5A00;" vertex="1" parent="1">
+          <mxGeometry x="15" y="176" width="270" height="34" as="geometry" />
         </mxCell>
 
         <mxCell id="p2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F1FB;strokeColor=#315EFB;strokeWidth=2;arcSize=4;" vertex="1" parent="1">
-          <mxGeometry x="350" y="8" width="300" height="330" as="geometry" />
+          <mxGeometry x="310" y="8" width="280" height="214" as="geometry" />
         </mxCell>
-        <mxCell id="h2" value="Computer science" style="text;html=1;align=center;verticalAlign=middle;fontSize=15;fontStyle=1;fontColor=#1B3A9E;" vertex="1" parent="1">
-          <mxGeometry x="350" y="16" width="300" height="22" as="geometry" />
+        <mxCell id="h2" value="Computer science" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#1B3A9E;" vertex="1" parent="1">
+          <mxGeometry x="310" y="16" width="280" height="22" as="geometry" />
         </mxCell>
-        <mxCell id="s2" value="Machine-checkable trace file and verifier" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#1B3A9E;" vertex="1" parent="1">
-          <mxGeometry x="360" y="40" width="280" height="16" as="geometry" />
+        <mxCell id="b2a" value="A per-claim trace file:&#xa;source, version, value" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="320" y="46" width="260" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="b2a" value="PER-CLAIM TRACE FILE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6E6FF;strokeColor=#315EFB;fontSize=11;fontStyle=1;fontColor=#1B3A9E;" vertex="1" parent="1">
-          <mxGeometry x="365" y="60" width="270" height="24" as="geometry" />
+        <mxCell id="b2b" value="A verifier recomputes&#xa;and returns pass or fail" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="320" y="88" width="260" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="b2b" value="claim id&#xa;source link&#xa;dataset version&#xa;input / output value" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#315EFB;fontSize=10;fontColor=#333333;align=center;" vertex="1" parent="1">
-          <mxGeometry x="365" y="90" width="270" height="68" as="geometry" />
+        <mxCell id="b2c" value="CLAIM LAYER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6E6FF;strokeColor=#315EFB;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#1B3A9E;" vertex="1" parent="1">
+          <mxGeometry x="330" y="130" width="240" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="b2c" value="content-addressed sources&#xa;(hash, not URL)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#315EFB;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="365" y="164" width="270" height="34" as="geometry" />
-        </mxCell>
-        <mxCell id="b2d" value="ONE-CLICK VERIFIER&#xa;recompute the declared value,&#xa;compare:  pass / fail" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6E6FF;strokeColor=#315EFB;fontSize=11;fontStyle=1;fontColor=#1B3A9E;" vertex="1" parent="1">
-          <mxGeometry x="365" y="204" width="270" height="46" as="geometry" />
-        </mxCell>
-        <mxCell id="b2e" value="Build layer exists (SLSA).&#xa;The claim layer is the contribution." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F1FB;strokeColor=#315EFB;dashed=1;fontSize=10;fontColor=#1B3A9E;" vertex="1" parent="1">
-          <mxGeometry x="365" y="256" width="270" height="34" as="geometry" />
-        </mxCell>
-        <mxCell id="r2" value="Buneman et al. (2001)&#xa;SLSA specification v1.2&#xa;CKAN 2.11" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#315EFB;fontSize=9;fontColor=#666666;align=left;spacingLeft=8;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="365" y="296" width="270" height="34" as="geometry" />
+        <mxCell id="r2" value="Buneman et al. (2001) &#183; SLSA v1.2 &#183; CKAN 2.11" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#1B3A9E;" vertex="1" parent="1">
+          <mxGeometry x="315" y="176" width="270" height="34" as="geometry" />
         </mxCell>
 
         <mxCell id="p3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E9F6F4;strokeColor=#14877D;strokeWidth=2;arcSize=4;" vertex="1" parent="1">
-          <mxGeometry x="690" y="8" width="300" height="330" as="geometry" />
+          <mxGeometry x="610" y="8" width="280" height="214" as="geometry" />
         </mxCell>
-        <mxCell id="h3" value="Behavioral science" style="text;html=1;align=center;verticalAlign=middle;fontSize=15;fontStyle=1;fontColor=#0B5C55;" vertex="1" parent="1">
-          <mxGeometry x="690" y="16" width="300" height="22" as="geometry" />
+        <mxCell id="h3" value="Behavioral science" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#0B5C55;" vertex="1" parent="1">
+          <mxGeometry x="610" y="16" width="280" height="22" as="geometry" />
         </mxCell>
-        <mxCell id="s3" value="Honesty, justification and over-trust" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#0B5C55;" vertex="1" parent="1">
-          <mxGeometry x="700" y="40" width="280" height="16" as="geometry" />
+        <mxCell id="b3a" value="Excuses raise dishonesty,&#xa;so trace should reduce it" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="620" y="46" width="260" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="b3a" value="Justification account:&#xa;dishonesty grows with excuses" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#14877D;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="705" y="60" width="270" height="38" as="geometry" />
+        <mxCell id="b3b" value="But easy checking may&#xa;breed over-trust instead" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="620" y="88" width="260" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="b3b" value="Moral licensing (competing):&#xa;easy checking may reduce scrutiny" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#14877D;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="705" y="104" width="270" height="38" as="geometry" />
+        <mxCell id="b3c" value="TESTED ON THE FAKE RATE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D3EFEB;strokeColor=#14877D;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#0B5C55;" vertex="1" parent="1">
+          <mxGeometry x="630" y="130" width="240" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="b3c" value="They separate on&#xa;verifier attention" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D3EFEB;strokeColor=#14877D;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#0B5C55;" vertex="1" parent="1">
-          <mxGeometry x="705" y="148" width="270" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="b3d" value="Risk: over-trust migrating from&#xa;AI outputs to AI-generated evidence" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E9F6F4;strokeColor=#14877D;dashed=1;fontSize=10;fontColor=#0B5C55;" vertex="1" parent="1">
-          <mxGeometry x="705" y="194" width="270" height="36" as="geometry" />
-        </mxCell>
-        <mxCell id="b3e" value="Next test: cross trace-file presence&#xa;with verifier scrutiny depth" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#14877D;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="705" y="236" width="270" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="r3" value="Shalvi et al. (2012)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#14877D;fontSize=9;fontColor=#666666;align=left;spacingLeft=8;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="705" y="292" width="270" height="34" as="geometry" />
+        <mxCell id="r3" value="Shalvi et al. (2012)" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#0B5C55;" vertex="1" parent="1">
+          <mxGeometry x="615" y="176" width="270" height="34" as="geometry" />
         </mxCell>
 
         <mxCell id="a12" style="endArrow=classic;html=1;dashed=1;strokeWidth=2;strokeColor=#8A5A00;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p1" target="p2">
@@ -95,15 +68,15 @@
         <mxCell id="a23" style="endArrow=classic;html=1;dashed=1;strokeWidth=2;strokeColor=#1B3A9E;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p2" target="p3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="l12" value="motivates" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#8A5A00;labelBackgroundColor=#FFFFFF;" vertex="1" parent="1">
-          <mxGeometry x="308" y="168" width="44" height="14" as="geometry" />
+        <mxCell id="l12" value="needs" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#8A5A00;labelBackgroundColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="289" y="108" width="24" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="l23" value="enables" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#1B3A9E;labelBackgroundColor=#FFFFFF;" vertex="1" parent="1">
-          <mxGeometry x="648" y="168" width="44" height="14" as="geometry" />
+        <mxCell id="l23" value="shapes" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#1B3A9E;labelBackgroundColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="589" y="108" width="34" height="14" as="geometry" />
         </mxCell>
 
-        <mxCell id="cap" value="Each column states one discipline, its mechanism, and the works cited for it. Solid boxes are established relations; dashed boxes and dashed arrows are the proposed synthesis. All values are simulated under the payoff law in the Colab notebook." style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#666666;fontStyle=2;" vertex="1" parent="1">
-          <mxGeometry x="10" y="344" width="980" height="24" as="geometry" />
+        <mxCell id="cap" value="Dashed arrows mark the proposed synthesis. Values are simulated." style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#666666;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="10" y="230" width="880" height="20" as="geometry" />
         </mxCell>
 
       </root>
