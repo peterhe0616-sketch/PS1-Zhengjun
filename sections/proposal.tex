@@ -43,33 +43,31 @@ Without a premium, faking wins by $25$---exactly the cost it avoids---and only a
 \textbf{Consequence and limits.} If licensing dominates, verification must not be a binary pass: it should report which claims were recomputed. A simulated table cannot establish human behavior; the next test crosses trace-file presence with check depth.
 
 \section{Advanced development and future directions}
-\textbf{Foundation.} Akerlof's quality-uncertainty analysis~\cite{akerlof1970}, recognized by the 2001 Nobel Memorial Prize in Economic Sciences~\cite{nobel2001}, establishes that unverifiable quality destroys markets and that institutions making quality observable restore trade. The enduring question is trust under asymmetric information. Spence~\cite{spence1973} adds that a costly credible signal separates quality only if the receiver can read it.
+\textbf{Foundation.} Akerlof's quality-uncertainty analysis~\cite{akerlof1970}, recognized by the 2001 Nobel Memorial Prize in Economic Sciences~\cite{nobel2001}, establishes that unverifiable quality destroys markets and that institutions making quality observable restore trade. The enduring question is trust under asymmetric information. Spence~\cite{spence1973} adds that a credible signal separates quality only if the receiver can read it.
 
-\textbf{The advance.} Build-layer provenance~\cite{slsa} already exists; unresolved is the claim layer, where per-claim declarations are recomputed at near-zero cost although the producer writes the record and can forge it. Treating $\Delta$ as a constant merely relocates the assumption: a premium exists only if publishing a trace is informative about type, which is Spence's single-crossing condition. If fakers publish as cheaply as honest producers the signal pools and $\Delta$ falls to zero. Making $\Delta$ endogenous is the next study; the certification design of M{\"a}kimattila et al.~\cite{makimattila2025} is the natural instrument, since there a sender's \emph{choice} among offered tests is itself the signal---but in that model the receiver obtains zero surplus, so a premium does not reach honest producers automatically.
-
-\textbf{The verifier is built for machines.} It returns pass or fail, which a non-specialist cannot interpret; letting an ordinary user judge a firm's claim, or its data-handling practice, is a problem of cognitive rather than computational cost.
+\textbf{The advance.} Build-layer provenance~\cite{slsa} already exists; unresolved is the claim layer, where per-claim declarations are recomputed at near-zero cost although the producer writes the record and can forge it. Treating $\Delta$ as a constant relocates the assumption: a premium exists only if publishing a trace is informative about type, which is Spence's single-crossing condition. If fakers publish as cheaply as honest producers the signal pools and $\Delta$ falls to zero. Endogenising $\Delta$ is the next study, and the certification design of M{\"a}kimattila et al.~\cite{makimattila2025} is the natural instrument. Separately, the verifier returns pass or fail, which a non-specialist cannot interpret; that is a problem of cognitive rather than computational cost.
 
 \begin{table}[h]\caption{From laureate foundations to a new interdisciplinary contribution.}
-\begin{tabularx}{\columnwidth}{@{}p{1.45cm}Y@{}}\toprule
+\begin{tabularx}{\columnwidth}{@{}p{1.4cm}Y@{}}\toprule
 \textbf{Horizon}&\textbf{Milestone and evidence}\\\midrule
-Foundation&Akerlof (1970): unverifiable quality collapses markets. Spence (1973): a credible signal needs single crossing.\\
-PS1&$3\times2$ game; two mechanisms found: a fine $pF$ and a premium $\Delta$, with $\Delta+pF>25$ required.\\
-Next study&Endogenise $\Delta$ in buyer beliefs: does publication separate types or pool?\\
-Longer term&A verifier a non-specialist can use, reporting what was checked and at what cost.\\
-2056&Verifiable honesty that is competitively rewarded, not merely enforced, and readable by any user.\\\bottomrule
+Foundation&Akerlof: unverifiable quality collapses markets. Spence: a credible signal needs single crossing.\\
+PS1&$3\times2$ game; a fine $pF$ and a premium $\Delta$ found, with $\Delta+pF>25$ required.\\
+Next study&Endogenise $\Delta$: does publication separate types or pool?\\
+Longer term&A verifier a non-specialist can use.\\
+2056&Verifiable honesty that is competitively rewarded, not merely enforced.\\\bottomrule
 \end{tabularx}\end{table}
 
 \noindent\textbf{Expected 2056 Nobel Prize and Turing Award contribution statement.}
-By 2056, I aim to contribute a governed trust infrastructure for an era of free generation, in which verifiable provenance is competitively rewarded rather than merely enforced, and in which any ordinary user can check a firm's claims and data-handling practices without technical training. Building on Akerlof's quality-uncertainty foundation, Spence's signalling logic and machine-checkable provenance, I will integrate economics, computer science and behavioral science so that near-zero-cost trace files, a verifier designed for non-specialists, and platform rules that make honest publication an equilibrium together let anyone inspect a claim in under a minute. Progress will be shown by an endogenous premium that separates honest from faking producers, a verifier whose accuracy and cost are documented, a discriminating behavioral test, and a rule design adopted on a live platform.
+By 2056, I aim to contribute a governed trust infrastructure for an era of free generation, in which verifiable provenance is competitively rewarded rather than merely enforced, and in which any ordinary user can check a firm's claims without technical training. Building on Akerlof's foundation, Spence's signalling logic and machine-checkable provenance, I will integrate economics, computer science and behavioral science so that near-zero-cost trace files, a verifier for non-specialists, and platform rules making honest publication an equilibrium let anyone inspect a claim in under a minute. Progress will be shown by an endogenous premium separating honest from faking producers, a verifier whose accuracy and cost are documented, a discriminating behavioral test, and a rule design adopted on a live platform.
 
 \subsection*{Open Science Statement}
 \textbf{GitHub:} \GitHubLink\\
 \textbf{Google Colab:} \ColabLink\par
-Released: a browser-run simulator and a Colab notebook that re-derives the payoff table and runs both sweeps. The simulator is static client-side HTML/CSS/JavaScript with no backend or key; the notebook needs only Python. Inputs are synthetic: one payoff law read by both. Shortest run: open the notebook and choose \emph{Run all}.
+Released: a browser-run simulator and a Colab notebook that re-derives the payoff table and runs both sweeps. Both are static or standard-library only, with no backend, key or paid service. Inputs are synthetic: one payoff law read by both. Shortest run: open the notebook and choose \emph{Run all}.
 
 \subsection*{Statement of Contribution to the UN's SDGs}
 \textbf{Hugging Face:} \DemoLink\\
-Through an open-access game, this project supports \textbf{SDG 4---Quality Education}~\cite{sdg4} by helping students and the public learn why honest disclosure requires cheap verification, by comparing the six rule-and-action combinations. No account or installation is needed. The resource released is the simulator; learning gains remain to be evaluated.
+Through an open-access game, this project supports \textbf{SDG 4---Quality Education}~\cite{sdg4} by helping students and the public learn why honest disclosure requires cheap verification, through the six rule-and-action combinations. No account is needed. The resource released is the simulator; learning gains remain to be evaluated.
 
 \subsection*{Submission milestones}
 This is v1, submitted September 13, 2026, 11:00 P.M. Beijing time (UTC+8). Class review: September 14. Author response: September 16. Reviewer follow-up: September 17. Revised submission v2: September 20. Appendix~\ref{app:abstract} records each reflection and revision; row~8 is marked pending, as no peer review has been received.
