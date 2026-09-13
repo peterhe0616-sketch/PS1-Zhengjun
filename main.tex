@@ -3,6 +3,8 @@
 \setcopyright{none}
 \renewcommand\footnotetextcopyrightpermission[1]{}
 \usepackage{amsmath,tabularx,array,enumitem,balance}
+\usepackage{xurl}
+\Urlmuskip=0mu plus 1mu\relax
 \definecolor{CourseBlue}{HTML}{315EFB}
 \definecolor{CourseTeal}{HTML}{14877D}
 \hypersetup{colorlinks=true,linkcolor=CourseBlue,citecolor=CourseTeal,urlcolor=CourseTeal}
@@ -14,10 +16,12 @@
 \newcommand{\Instructor}{Luyao Zhang}
 \newcommand{\WorkshopSession}{Workshop 6}
 % Replace these with YOUR fork/project URLs, not the instructor's template.
-\newcommand{\GitHubLink}{\url{https://github.com/peterhe0616-sketch/PS1-Zhengjun}}
+% \urldef keeps the URL breakable (a plain \newcommand freezes it, so xurl
+% cannot insert line breaks and the link overruns the narrow column).
+\urldef{\GitHubLink}\url{https://github.com/peterhe0616-sketch/PS1-Zhengjun}
 \newcommand{\TemplateRepository}{\url{https://github.com/sunshineluyao/ps1-overleaf-template}}
-\newcommand{\ColabLink}{\url{https://colab.research.google.com/drive/1RjQNsFFPo9dwrvxjKAGlEi05C0KMp4O8}}
-\newcommand{\DemoLink}{\url{https://huggingface.co/spaces/Peterhe123/Trust}}
+\urldef{\ColabLink}\url{https://colab.research.google.com/drive/1RjQNsFFPo9dwrvxjKAGlEi05C0KMp4O8}
+\urldef{\DemoLink}\url{https://huggingface.co/spaces/Peterhe123/Trust}
 \newcommand{\coursemeta}{\noindent\textbf{Submission to:} \CourseNumber{} --- \CourseName.\\
 \textbf{Course session:} \CourseSession. \textbf{Workshop:} \WorkshopSession.\\
 \textbf{Instructor:} \Instructor. \textbf{Assignment:} PS1 research proposal.\par\smallskip}
