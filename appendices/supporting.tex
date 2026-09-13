@@ -8,20 +8,7 @@ I formed the core idea, posed the research question, and developed the one-click
 \bibliographystyle{ACM-Reference-Format}\bibliography{references}
 \appendix
 \section{Technical details and reproducibility}\label{app:tech}
-\textbf{Notation.}
-\begin{tabularx}{\textwidth}{@{}p{0.2\textwidth}Y@{}}
-\toprule
-\textbf{Symbol} & \textbf{Definition} \\\midrule
-$a_i$ & Developer $i$'s action: honest trace, no trace, or faked trace. \\
-$v_i$ & Whether developer $i$ enrols in the platform verifier. \\
-$m$ & Whether trace-file attachment is mandatory. \\
-$p$ & Spot-check rate: probability a deliverable is inspected. \\
-$F$ & Fine paid by a fake that is detected. \\
-$pF$ & Expected fine on a faked trace file. \\
-$\Delta$ & Premium buyers pay only for a verifiable trace file. \\
-$p^{*}$ & Smallest $p$ making honest the unique best response. \\
-\bottomrule
-\end{tabularx}
+\textbf{Notation.} $a_i$ developer $i$'s action (honest, none, fake); $v_i$ verifier enrolment; $m$ mandatory attachment; $p$ spot-check rate; $F$ fine on a detected fake; $pF$ expected fine; $\Delta$ premium paid only for a verifiable trace file; $p^{*}$ smallest $p$ making honesty the unique best response.
 
 \textbf{Artifact.} Trace-or-Fake Market Game, a $3\times2$ simulator. Space: \url{https://huggingface.co/spaces/Peterhe123/Trust}. Notebook: \texttt{colab/trace\_or\_fake\_psweep.ipynb}. Author: Zhengjun He. v1.0.0, 6 September 2026.
 

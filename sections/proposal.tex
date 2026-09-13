@@ -26,7 +26,6 @@ C \quad faked trace  & \textbf{160}$^{\star}$ & 160 \\\bottomrule
 Without a premium, faking wins by $25$---exactly the cost it avoids---and only a fine can deter it: $p^{*}=0.5$ at $F=50$. With a premium, honesty wins by being worth more. The mechanisms substitute: $\Delta=15$ halves the required spot-check rate to $0.2$, and $\Delta=25$ removes the need to fine at all.
 
 \textbf{Unresolved.} Akerlof fixes buyers' beliefs rather than asking how a costly signal forms them. Spence~\cite{spence1973} supplies that logic: a premium exists only if the signal separates types.
-
 \section{Answer to Q2: method and evaluation}
 \textbf{Method.} A browser-run $3\times2$ game on a Hugging Face Space, client-side HTML, CSS and JavaScript; the payoff law is in Appendix~\ref{app:tech}. The algorithm enumerates the six cells and finds the best response.
 
@@ -34,29 +33,29 @@ Without a premium, faking wins by $25$---exactly the cost it avoids---and only a
 
 \textbf{Baseline, modification, metric, check.} Baseline is the status-quo cell (net $120$); the modification is mandatory attachment plus $p$ and $F$; the metric is the threshold $p^{*}$ at which honesty is uniquely best. Six checks pass: no rules $\Rightarrow$ fake wins; enforcement alone makes honesty unique; a premium alone ($\Delta=30$, $p=F=0$) also does; the status quo is unchanged; enrolment is weakly dominant; six cells.
 
-\textbf{Result.} At $F=50$, $p^{*}=0.5000$; the required $p$ falls as $F$ rises ($F=100\Rightarrow0.25$; $F=400\Rightarrow0.0625$), and below $F=25$ no $p\le1$ suffices. All results are \emph{simulated}; the Colab notebook reproduces them from one payoff law.
+\textbf{Result.} At $F=50$, $p^{*}=0.5000$; the required $p$ falls as $F$ rises ($F=100\Rightarrow0.25$; $F=400\Rightarrow0.0625$), and below $F=25$ no $p\le1$ suffices. All results are \emph{simulated}; the Colab notebook reproduces them.
 
 \section{Answer to Q3: behavior and competing explanations}
 \textbf{Competing explanations.} Justification: dishonesty grows with available justifications~\cite{shalvi2012}, so traceability should shrink that space. Moral licensing: a visible attestation lets producer and verifier treat the check as discharging responsibility, so the producer shades a claim the verifier no longer examines. They predict opposite effects from the same manipulation.
 
 \textbf{Discriminating evidence.} They separate on verifier attention. Justification predicts less faking with scrutiny unchanged; licensing predicts reduced scrutiny and a fake rate falling less than the attachment rate rises. Measuring both producer choice and check depth discriminates; measuring the fake rate alone cannot.
 
-\textbf{Consequence and limits.} If licensing dominates, verification must not be a binary pass: it should report which claims were recomputed, and $pF$ must be paired with something keeping scrutiny positive. A simulated table cannot establish human behavior; the next test crosses trace-file presence with check depth.
+\textbf{Consequence and limits.} If licensing dominates, verification must not be a binary pass: it should report which claims were recomputed. A simulated table cannot establish human behavior; the next test crosses trace-file presence with check depth.
 
 \section{Advanced development and future directions}
-\textbf{Foundation.} Akerlof's quality-uncertainty analysis~\cite{akerlof1970}, recognized by the 2001 Nobel Memorial Prize in Economic Sciences~\cite{nobel2001}, establishes that unverifiable quality destroys markets and that institutions making quality observable restore trade. The enduring question is trust under asymmetric information. Spence~\cite{spence1973} supplies the complementary logic: a costly credible signal separates quality only if the receiver can read it.
+\textbf{Foundation.} Akerlof's quality-uncertainty analysis~\cite{akerlof1970}, recognized by the 2001 Nobel Memorial Prize in Economic Sciences~\cite{nobel2001}, establishes that unverifiable quality destroys markets and that institutions making quality observable restore trade. The enduring question is trust under asymmetric information. Spence~\cite{spence1973} adds that a costly credible signal separates quality only if the receiver can read it.
 
-\textbf{The boundary and the advance.} Build-layer provenance~\cite{slsa} already exists; unresolved is the claim layer, where per-claim sources and input--output declarations are recomputed at near-zero cost although the producer writes the record and can forge it. Treating $\Delta$ as a constant merely relocates the assumption: a premium exists only if publishing a trace is informative about type, which is Spence's single-crossing condition. If fakers can publish traces as cheaply as honest producers the signal pools, $\Delta$ falls to zero, and enforcement is again the only mechanism. Making $\Delta$ endogenous is the next study; the certification-design result of M{\"a}kimattila et al.~\cite{makimattila2025} is the natural instrument, since there a sender's \emph{choice} among offered tests is itself the signal---but in that model the receiver obtains zero surplus, so a premium does not reach honest producers automatically.
+\textbf{The advance.} Build-layer provenance~\cite{slsa} already exists; unresolved is the claim layer, where per-claim declarations are recomputed at near-zero cost although the producer writes the record and can forge it. Treating $\Delta$ as a constant merely relocates the assumption: a premium exists only if publishing a trace is informative about type, which is Spence's single-crossing condition. If fakers publish as cheaply as honest producers the signal pools and $\Delta$ falls to zero. Making $\Delta$ endogenous is the next study; the certification design of M{\"a}kimattila et al.~\cite{makimattila2025} is the natural instrument, since there a sender's \emph{choice} among offered tests is itself the signal---but in that model the receiver obtains zero surplus, so a premium does not reach honest producers automatically.
 
-\textbf{The verifier is built for machines.} It returns pass or fail, which a non-specialist cannot interpret; letting an ordinary user judge a firm's claim, or its data-handling practice, is a problem of cognitive rather than computational cost, where the objective is accurate enough and fast enough rather than perfect.
+\textbf{The verifier is built for machines.} It returns pass or fail, which a non-specialist cannot interpret; letting an ordinary user judge a firm's claim, or its data-handling practice, is a problem of cognitive rather than computational cost.
 
 \begin{table}[h]\caption{From laureate foundations to a new interdisciplinary contribution.}
-\begin{tabularx}{\columnwidth}{@{}p{1.5cm}Y@{}}\toprule
+\begin{tabularx}{\columnwidth}{@{}p{1.45cm}Y@{}}\toprule
 \textbf{Horizon}&\textbf{Milestone and evidence}\\\midrule
 Foundation&Akerlof (1970): unverifiable quality collapses markets. Spence (1973): a credible signal needs single crossing.\\
-PS1&A $3\times2$ game; two mechanisms located, a fine $pF$ and a premium $\Delta$, with $\Delta+pF>25$ required.\\
-Next study&Endogenise $\Delta$ in buyer beliefs: does trace publication separate types or pool?\\
-Longer term&A verifier a non-specialist can use, reporting what was checked, at what accuracy and cost.\\
+PS1&$3\times2$ game; two mechanisms found: a fine $pF$ and a premium $\Delta$, with $\Delta+pF>25$ required.\\
+Next study&Endogenise $\Delta$ in buyer beliefs: does publication separate types or pool?\\
+Longer term&A verifier a non-specialist can use, reporting what was checked and at what cost.\\
 2056&Verifiable honesty that is competitively rewarded, not merely enforced, and readable by any user.\\\bottomrule
 \end{tabularx}\end{table}
 
