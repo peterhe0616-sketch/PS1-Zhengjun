@@ -17,10 +17,10 @@
         <mxCell id="b1b" value="Buyers cannot observe&#xa;quality, so faking pays" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
           <mxGeometry x="20" y="88" width="260" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="b1c" value="FINE pF    or    PREMIUM &#916;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE9C7;strokeColor=#D79B00;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#8A5A00;" vertex="1" parent="1">
+        <mxCell id="b1c" value="FINE pF    or    PREMIUM d" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE9C7;strokeColor=#D79B00;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#8A5A00;" vertex="1" parent="1">
           <mxGeometry x="30" y="130" width="240" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="r1" value="Akerlof (1970) &#183; Spence (1973)&#xa;Nash (1950) &#183; M&#228;kimattila et al. (2025)" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#8A5A00;" vertex="1" parent="1">
+        <mxCell id="r1" value="Akerlof (1970), Spence (1973)&#xa;Nash (1950), M&#228;kimattila et al. (2025)" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#8A5A00;" vertex="1" parent="1">
           <mxGeometry x="15" y="176" width="270" height="34" as="geometry" />
         </mxCell>
 
@@ -39,7 +39,7 @@
         <mxCell id="b2c" value="CLAIM LAYER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6E6FF;strokeColor=#315EFB;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#1B3A9E;" vertex="1" parent="1">
           <mxGeometry x="330" y="130" width="240" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="r2" value="Buneman et al. (2001) &#183; SLSA v1.2 &#183; CKAN 2.11" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#1B3A9E;" vertex="1" parent="1">
+        <mxCell id="r2" value="Buneman et al. (2001), SLSA v1.2, CKAN 2.11" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#1B3A9E;" vertex="1" parent="1">
           <mxGeometry x="315" y="176" width="270" height="34" as="geometry" />
         </mxCell>
 

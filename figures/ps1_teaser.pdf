@@ -10,7 +10,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 675.00 195.00] /Resources << /Font << /F1 5 0 R /F2 6 0 R /F3 7 0 R >> >> /Contents 4 0 R >>
 endobj
 4 0 obj
-<< /Length 3232 >>
+<< /Length 3228 >>
 stream
 1 1 1 rg 0 0 675.00 195.00 re f
 1.000 1.000 1.000 rg
@@ -56,88 +56,10 @@ BT
 (Economics) Tj
 ET
 BT
-0.200 0.200 0.200 rg
-/F1 8.25 Tf
-1 0 0 1 71.75 150.75 Tm
-(Generation is free,) Tj
-ET
-BT
-0.200 0.200 0.200 rg
-/F1 8.25 Tf
-1 0 0 1 65.31 140.62 Tm
-(verification is costly) Tj
-ET
-BT
-0.200 0.200 0.200 rg
-/F1 8.25 Tf
-1 0 0 1 67.45 119.25 Tm
-(Buyers cannot observe) Tj
-ET
-BT
-0.200 0.200 0.200 rg
-/F1 8.25 Tf
-1 0 0 1 63.16 109.12 Tm
-(quality, so faking pays) Tj
-ET
-BT
-0.541 0.353 0.000 rg
-/F2 9.00 Tf
-1 0 0 1 51.66 83.18 Tm
-(FINE pF    or    PREMIUM ?) Tj
-ET
-BT
-0.541 0.353 0.000 rg
-/F1 6.75 Tf
-1 0 0 1 59.85 52.05 Tm
-(Akerlof \(1970\) ? Spence \(1973\)) Tj
-ET
-BT
-0.541 0.353 0.000 rg
-/F1 6.75 Tf
-1 0 0 1 44.05 43.80 Tm
-(Nash \(1950\) ? M?kimattila et al. \(2025\)) Tj
-ET
-BT
 0.106 0.227 0.620 rg
 /F2 10.50 Tf
 1 0 0 1 293.82 171.15 Tm
 (Computer science) Tj
-ET
-BT
-0.200 0.200 0.200 rg
-/F1 8.25 Tf
-1 0 0 1 288.17 150.75 Tm
-(A per-claim trace file:) Tj
-ET
-BT
-0.200 0.200 0.200 rg
-/F1 8.25 Tf
-1 0 0 1 290.31 140.62 Tm
-(source, version, value) Tj
-ET
-BT
-0.200 0.200 0.200 rg
-/F1 8.25 Tf
-1 0 0 1 292.45 119.25 Tm
-(A verifier recomputes) Tj
-ET
-BT
-0.200 0.200 0.200 rg
-/F1 8.25 Tf
-1 0 0 1 286.02 109.12 Tm
-(and returns pass or fail) Tj
-ET
-BT
-0.106 0.227 0.620 rg
-/F2 9.00 Tf
-1 0 0 1 311.76 83.18 Tm
-(CLAIM LAYER) Tj
-ET
-BT
-0.106 0.227 0.620 rg
-/F1 6.75 Tf
-1 0 0 1 258.52 47.93 Tm
-(Buneman et al. \(2001\) ? SLSA v1.2 ? CKAN 2.11) Tj
 ET
 BT
 0.043 0.361 0.333 rg
@@ -148,8 +70,32 @@ ET
 BT
 0.200 0.200 0.200 rg
 /F1 8.25 Tf
+1 0 0 1 71.75 150.75 Tm
+(Generation is free,) Tj
+ET
+BT
+0.200 0.200 0.200 rg
+/F1 8.25 Tf
+1 0 0 1 288.17 150.75 Tm
+(A per-claim trace file:) Tj
+ET
+BT
+0.200 0.200 0.200 rg
+/F1 8.25 Tf
 1 0 0 1 508.88 150.75 Tm
 (Excuses raise dishonesty,) Tj
+ET
+BT
+0.200 0.200 0.200 rg
+/F1 8.25 Tf
+1 0 0 1 65.31 140.62 Tm
+(verification is costly) Tj
+ET
+BT
+0.200 0.200 0.200 rg
+/F1 8.25 Tf
+1 0 0 1 290.31 140.62 Tm
+(source, version, value) Tj
 ET
 BT
 0.200 0.200 0.200 rg
@@ -160,26 +106,38 @@ ET
 BT
 0.200 0.200 0.200 rg
 /F1 8.25 Tf
+1 0 0 1 67.45 119.25 Tm
+(Buyers cannot observe) Tj
+ET
+BT
+0.200 0.200 0.200 rg
+/F1 8.25 Tf
+1 0 0 1 292.45 119.25 Tm
+(A verifier recomputes) Tj
+ET
+BT
+0.200 0.200 0.200 rg
+/F1 8.25 Tf
 1 0 0 1 517.46 119.25 Tm
 (But easy checking may) Tj
 ET
 BT
 0.200 0.200 0.200 rg
 /F1 8.25 Tf
+1 0 0 1 63.16 109.12 Tm
+(quality, so faking pays) Tj
+ET
+BT
+0.200 0.200 0.200 rg
+/F1 8.25 Tf
+1 0 0 1 286.02 109.12 Tm
+(and returns pass or fail) Tj
+ET
+BT
+0.200 0.200 0.200 rg
+/F1 8.25 Tf
 1 0 0 1 511.02 109.12 Tm
 (breed over-trust instead) Tj
-ET
-BT
-0.043 0.361 0.333 rg
-/F2 8.25 Tf
-1 0 0 1 513.16 83.40 Tm
-(TESTED ON THE FAKE RATE) Tj
-ET
-BT
-0.043 0.361 0.333 rg
-/F1 6.75 Tf
-1 0 0 1 527.40 47.93 Tm
-(Shalvi et al. \(2012\)) Tj
 ET
 BT
 0.541 0.353 0.000 rg
@@ -192,6 +150,48 @@ BT
 /F1 6.75 Tf
 1 0 0 1 443.97 106.43 Tm
 (shapes) Tj
+ET
+BT
+0.541 0.353 0.000 rg
+/F2 9.00 Tf
+1 0 0 1 51.66 83.18 Tm
+(FINE pF    or    PREMIUM d) Tj
+ET
+BT
+0.106 0.227 0.620 rg
+/F2 9.00 Tf
+1 0 0 1 311.76 83.18 Tm
+(CLAIM LAYER) Tj
+ET
+BT
+0.043 0.361 0.333 rg
+/F2 8.25 Tf
+1 0 0 1 513.16 83.40 Tm
+(TESTED ON THE FAKE RATE) Tj
+ET
+BT
+0.541 0.353 0.000 rg
+/F1 6.75 Tf
+1 0 0 1 61.60 52.05 Tm
+(Akerlof \(1970\), Spence \(1973\)) Tj
+ET
+BT
+0.106 0.227 0.620 rg
+/F1 6.75 Tf
+1 0 0 1 262.03 47.93 Tm
+(Buneman et al. \(2001\), SLSA v1.2, CKAN 2.11) Tj
+ET
+BT
+0.043 0.361 0.333 rg
+/F1 6.75 Tf
+1 0 0 1 527.40 47.93 Tm
+(Shalvi et al. \(2012\)) Tj
+ET
+BT
+0.541 0.353 0.000 rg
+/F1 6.75 Tf
+1 0 0 1 45.81 43.80 Tm
+(Nash \(1950\), Mäkimattila et al. \(2025\)) Tj
 ET
 BT
 0.400 0.400 0.400 rg
@@ -217,11 +217,11 @@ xref
 0000000064 00000 n 
 0000000121 00000 n 
 0000000273 00000 n 
-0000003557 00000 n 
-0000003654 00000 n 
-0000003756 00000 n 
+0000003553 00000 n 
+0000003650 00000 n 
+0000003752 00000 n 
 trailer
 << /Size 8 /Root 1 0 R >>
 startxref
-3861
+3857
 %%EOF
