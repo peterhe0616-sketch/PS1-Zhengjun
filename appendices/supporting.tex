@@ -1,54 +1,102 @@
 \clearpage\nobalance
 \section*{Author Notes}
 \subsection*{Acknowledgements}
-I thank Prof. Luyao Zhang, Program Chair, and Prof. Ken Rogerson, Program Discussant, of the \emph{2056 Nobel and Turing Laureate Program Launch Workshop}, held at Duke Kunshan University on September 7, 2026. I also thank [full name of teammate 1] and [full name of teammate 2], my teammates in [session number and full session title], and the rest of the COMSCI/ECON 206 Autumn 2026 Session 1 class for their questions and discussion. [Identify a specific contribution you actually used.] I am responsible for the proposal and remaining errors.
+I thank Prof. Luyao Zhang, Program Chair, and Prof. Ken Rogerson, Program Discussant, of the \emph{2056 Nobel and Turing Laureate Program Launch Workshop}, held at Duke Kunshan University on September 7, 2026. I also thank Longfei Jing and Yongzhuo Wu, my teammates in Workshop 6, and the rest of the COMSCI/ECON 206 Autumn 2026 Session 1 class. [Identify a specific contribution you actually used.] I am responsible for the proposal and remaining errors.
 \subsection*{Individual contribution}
-[State what you personally designed, implemented, wrote, checked, and adapted. Identify shared code or other contributions accurately. Program roles and feedback do not automatically imply coauthorship.]
+I formed the core idea that in a market where AI makes generation free and verification expensive, every deliverable should carry a near-free, automatically generated trace file. I posed the research question, and developed the one-click verifier, the lemons-market framing and the rule triple $(m,p,F)$. I verified the relevant literature and compared my idea with existing work, and verified the game by playing it and checking its payoff logic, rules and report. On 9 September I found and corrected a sign error in the payoff law (Appendix~\ref{app:develop}). The photographs, the game numbers and the final wording are mine.
 
 \bibliographystyle{ACM-Reference-Format}\bibliography{references}
 \appendix
-\section{Technical details and reproducibility}
-[Supply derivations, inputs, package versions, seed where relevant, actual outputs and limitations. Identify repository commit, notebook cells and demo version. Include the fresh-run record.]
+\section{Technical details and reproducibility}\label{app:tech}
+\textbf{Notation.}
+\begin{tabularx}{\textwidth}{@{}p{0.2\textwidth}Y@{}}
+\toprule
+\textbf{Symbol} & \textbf{Definition} \\\midrule
+$a_i$ & Developer $i$'s action: honest trace, no trace, or faked trace. \\
+$v_i$ & Whether developer $i$ enrols in the platform verifier. \\
+$m$ & Whether trace-file attachment is mandatory. \\
+$p$ & Spot-check rate: probability a submitted deliverable is inspected. \\
+$F$ & Fine paid by a fake that is detected. \\
+$pF$ & Expected fine on a faked trace file. \\
+$\Delta$ & Premium buyers pay only for a verifiable trace file. \\
+$p^{*}$ & Smallest $p$ making honest the unique best response. \\
+$b_a$, $c_a$ & Market benefit and cost of action $a$. \\
+$s$ & Stability gained by enrolling in the verifier. \\
+\bottomrule
+\end{tabularx}
+
+\textbf{Artifact.} Trace-or-Fake Market Game, a $3\times2$ provenance-rule simulator. Space: \url{https://huggingface.co/spaces/Peterhe123/Trust}. Files: \texttt{index.html}, \texttt{README.md}, \texttt{verify\_game.mjs}. Author: Zhengjun He. v1.0.0, 6 September 2026.
+
+\textbf{What it does.} A developer publishing a tool answers two questions. Q1, trace file: provide one (cost $+5\%$, benefit $+20\%$), none (no change), or fake one (cost $-20\%$, benefit $-20\%$). Q2, verifier: enrol (cost $+5\%$, stability $+20\%$) or not. All indices start at $100$; the page prints a report after three runs. Nothing is stored and no network request is made.
+
+\textbf{Payoff law and checks.} One block is read by both the game and the notebook, so they cannot disagree. Five checks pass: with no rules the fake wins; with $p=1,F=100$ honesty is unique; the status quo nets $100$; enrolment is weakly dominant; there are six cells. The law carries two mechanisms: a fine $pF$ charged only to a detected fake, and a premium $\Delta$ paid only for a verifiable trace file. Enrolment in the verifier costs $5$ and adds $20$ stability, so it is weakly dominant and the effective choice is among the three actions.
+
+\textbf{Correction, 9 September 2026.} The first version summed a cost, a benefit and a stability index. Cost and benefit have opposite signs, so summing them let honesty win on both ($105$ vs $80$ cost, $120$ vs $80$ benefit) before any rule applied, and the sweep returned $p^{*}=0$: faking was never attractive, so the question could not be posed. The corrected law enters cost negatively and gives a fake the same market benefit as an honest deliverable. It now yields a real threshold: the fake wins with no rules ($160$ vs $135$), and at $F=50$ honesty requires $pF>25$, so $p^{*}=0.5000$; the required $p$ falls as $F$ rises ($F=100\Rightarrow0.25$; $F=400\Rightarrow0.0625$), and below $F=25$ no $p\le1$ suffices.
+
+\textbf{Second correction, same date: the missing premium.} With the law above, honest and faked traces were paid identically, so honesty was a tax rather than an asset and was never chosen for being worth more. A market premium $\Delta$ paid only for a verifiable trace file repairs this. The two mechanisms substitute exactly: honesty requires $\Delta+pF>25$. At $\Delta=0$ the fine must do all the work ($p^{*}=0.5$ at $F=50$); at $\Delta=15$ the required rate halves to $0.2$; at $\Delta=25$ no enforcement is needed at all and honesty wins with $p=F=0$. Values are from the verified notebook run; the deployed Space should be updated to this law.
+
+\textbf{Fresh-run record.} Python 3.11, standard library only, no seed needed since both sweeps are deterministic. The notebook ran top to bottom with no error; abridged output:
+
+\begin{quote}\small\ttfamily
+A\_honest 135 \quad B\_none 120 \quad C\_fake 160 \quad (no rules, $\Delta$=0)\\
+Best response with no rules: C\_fake\\
+PASS no\_rules\_fake\_wins, strong\_rule\_honesty\_unique,\\
+\hspace*{2.5em}status\_quo\_unchanged, enrolment\_weakly\_dominant, six\_cells\\
+Threshold p* = 0.5000 (F = 50) \quad fake advantage = +25.0\\
+F=25: none \quad F=50: 0.5000 \quad F=100: 0.2500 \quad F=400: 0.0625\\
+--- premium sweep, p = F = 0 ---\\
+delta=0: C\_fake \quad delta=25: tie \quad delta=26: A\_honest \quad delta=30: A\_honest\\
+--- combined threshold: delta + p*F > 25 ---\\
+delta=0 -> pF=25.0 (p*=0.50 at F=50)\\
+delta=15 -> pF=10.0 (p*=0.20 at F=50)\\
+delta=25 -> pF= 0.0 (p*=0.00: no enforcement needed)
+\end{quote}
+
+\textbf{Boundary.} Static client-side HTML/CSS/JavaScript only: no runtime, backend, key or paid service. Hosting and the viewer's browser still consume energy, and only the narrower claim is made~\cite{lannelongue2021}. Semantic fieldsets, table captions, \texttt{aria-live} regions and keyboard operability are present; a full screen-reader pass is unverified.
+
 \subsection{AI-use disclosure}
-AI-Assisted drafting and debugging are permitted after initial independent reasoning. Initial reasoning and handwritten reflection are Human-Only. Record tool/model, date, purpose, significant prompts, accepted or rejected suggestions, human changes and verification. If none, state ``No generative AI was used.'' The human author is responsible for every claim, citation and computation.
+\textbf{Record.} DeepSeek, model \texttt{deepseek-v4-flash}, 6 September 2026, for literature comparison and for debugging the game's JavaScript. Accepted: that build-layer attestation already exists, so the contribution belongs at the claim layer. Rejected: framings claiming the artifact establishes human behavior. I re-read every source, re-derived the table, played the game and ran the checker. Initial reasoning and handwritten reflection are Human-Only.
 
-\section{Cumulative Intellectual Development}
-This proposal develops my Intellectual Statement II through the \emph{2056 Nobel and Turing Laureate Program Launch Workshop}, held on September 7, 2026 at Duke Kunshan University, IB 2050. Program Chair: Prof. Luyao Zhang. Program Discussant: Prof. Ken Rogerson. My session: [number and full title]. My role: [assigned role]. My teammates: [full name 1] and [full name 2]. I acknowledge their contributions and the rest of the class's questions and discussion.
+\section{Cumulative Intellectual Development}\label{app:develop}
+This proposal develops my Intellectual Statement II through the \emph{2056 Nobel and Turing Laureate Program Launch Workshop}, September 7, 2026, Duke Kunshan University, IB 2050. Program Chair: Prof. Luyao Zhang. Program Discussant: Prof. Ken Rogerson. My session: Workshop 6. My role: [assigned role]. My teammates: Longfei Jing and Yongzhuo Wu.
 
-[Trace an earlier claim, a specific dated comment or piece of evidence, and the resulting revision with its intellectual consequence. Do not write only a chronological diary. Retain and revise the 2056 contribution statement.]
+\textbf{First change: the object of the question.} My earlier claim was that I would build mechanisms letting agents and their designers cooperate under near-total unobservability. The September 4 field evidence forced something narrower. At the Tencent Shanghai Office, plugin quality is hard to observe before adoption, so buyers rely on cheap signals. At the Shanghai Science and Technology Museum, the deep-residual-learning panel asks a general audience to trust institutional authority rather than checkable evidence. The marketplace is a market without institutional trust; the museum is institutional trust without a market. Workshop feedback sharpened the boundary: build-layer provenance already exists at near-zero cost, so the contribution must sit at the claim layer. That moved the proposal from a disclosure design to a rule design.
 
-Appendix~\ref{app:abstract} contains the structured abstract in the cumulative reflection format. Update its eight rows and preserve the prior version. The Expected 2056 Nobel Prize and Turing Award contribution statement in Section 5 must follow from the foundation, current-era boundary and interdisciplinary milestones.
+\textbf{Second change: the payoff-law correction, 9 September 2026.} \emph{Earlier claim:} the deployed game showed honest-plus-verified was the unique optimum, offered as evidence the rule works. \emph{Source:} the notebook run during computational practice. \emph{Revision:} the sweep returned $p^{*}=0$, showing the game summed cost with the wrong sign and penalised faking on benefit too, so honesty won regardless of any rule. The law was re-derived. \emph{Consequence:} this is substantive, not cosmetic. The original game could not pose its own question, since faking was never tempting and there was nothing for a fine to deter. The corrected law gives a real threshold ($pF>25$, so $p^{*}=0.5$ at $F=50$), which is the quantity the proposal needs. Affected: Section~3, the Section~5 table, the Open Science Statement, and rows~4--5 of Appendix~\ref{app:abstract}. A baseline that cannot fail its own test is not evidence.
+
+\textbf{Third change: honesty was modelled as a cost, not an asset, 9 September 2026.} \emph{Earlier claim:} the corrected law showed honesty could be an equilibrium, and I treated the analysis as complete. \emph{Source:} reading the certification-design result of M{\"a}kimattila et al.~\cite{makimattila2025}, in which a sender's \emph{choice} among offered tests is itself informative, together with Spence's single-crossing condition~\cite{spence1973}. \emph{Revision:} in my law honest and faked traces were paid the same base benefit, so honesty won only by avoiding a penalty. I added a market premium $\Delta$ paid only for a verifiable trace file, making the condition $\Delta+pF>25$. \emph{Consequence:} the proposal now answers its own question. Before, it could show only that cheating does not pay; now it shows honesty can win because it is worth more, and that a premium of $25$ removes the need to fine at all. Affected: Section~2 (hypothesis, model, Table~1), Q1, the Section~5 roadmap and the 2056 statement. \emph{What remains unresolved:} $\Delta$ is still a parameter rather than a belief. If fakers can publish traces as cheaply as honest producers the signal pools and $\Delta\to0$, so making $\Delta$ endogenous is the next study.
 
 \section{Field and open-source inspiration}
-The \emph{Joint Interdisciplinary Field Trip---Technology, Computation, Culture \& Society in Action} took place on September 4, 2026. Record your actual observations at \textbf{Tencent Shanghai Office} and \textbf{Shanghai Science and Technology Museum}. State attendance accurately.
+The \emph{Joint Interdisciplinary Field Trip---Technology, Computation, Culture \& Society in Action} took place on September 4, 2026.
 
-[Retain one industry photograph and one public-sector photograph from the earlier assignment. Each caption gives exact site, September 4, 2026 visit date, photographer/source, activity or exhibit, and relevance. Distinguish observation from interpretation; connect each setting to an open-source inspiration, subsequent research, and proposed practical value. If you lacked first-hand access, identify an attributed alternative instead of claiming attendance.]
+\textbf{Tencent Shanghai Office.} Observation: WorkBuddy is Tencent's AI agent platform, whose marketplace connects plugin developers with users. Interpretation: plugin quality and security are hard to observe before adoption, so buyers may rely on cheap signals, and costly verification can lead to a lemons market. Photograph: \emph{WorkBuddy agent-plugin marketplace}, taken by the author, 4 September 2026.
+
+\textbf{Shanghai Science and Technology Museum.} Observation: the 2023 Mathematics and Computer Science Prize panel~\cite{futureprize2023} presents deep residual learning (He Kaiming et al.) through simplified diagrams. Interpretation: trust here rests on the museum's institutional authority, not on independently checkable evidence. Photograph: \emph{2023 Mathematics and Computer Science Prize panel}, taken by the author, 4 September 2026.
+
+\textbf{Two open-source tools.} (i) \emph{SLSA}~\cite{slsa}, \url{https://slsa.dev/}, v1.2, accessed 6 September 2026; repository Apache-2.0. Capability: generates non-forgeable build provenance---which commit built which artifact---so a verifier can check it. Limitation: it certifies the build chain, not whether the artifact does what its description claims. Consequence: SLSA supplies the build layer at near-zero cost, so my contribution is the claim layer it ignores. (ii) \emph{CKAN}~\cite{ckan}, \url{https://ckan.org/}, 2.11, accessed 6 September 2026; GNU AGPL-3.0. Capability: an open-data catalog with standardised metadata and public APIs. Limitation: it stores whatever publishers upload and never checks whether a dataset matches its description. Consequence: CKAN is the natural substrate for the trace file, since a claim would deep-link to an exact dataset that the verifier recomputes.
 
 \section{Review response and revision record}
-[Retain v1, both peer reviews, author rebuttal, reviewer follow-up and v2. Use the three review themes: strengths to retain, constructive concerns to address, and questions to clarify. Explain your decisions, changed locations and actual verification results. Justify any retained approach or deferred work.]
+\textbf{Status: pending.} Peer reviews are scheduled for September 14, 2026 and have not been received; this section will be completed with the author response and the v2 revision. No reviewer feedback is claimed.
 
 \clearpage\onecolumn
 \section{Structured abstract and cumulative proposal map}\label{app:abstract}
-Update this structured abstract with each cumulative reflection. Replace each prompt with a brief, concrete entry and retain earlier versions. The first seven rows summarize the research; the final row records feedback and revision. Detailed optional prompts are in the separate Scaffolding Companion.
 \par\medskip
 \begin{table}[H]
-\caption{Appendix E structured abstract template; retain the eight-row proposal structure.}
+\caption{Appendix E structured abstract; the eight-row proposal structure.}
 \label{tab:abstract-map}
 \renewcommand{\arraystretch}{1.18}
 \begin{tabularx}{\textwidth}{@{}p{0.27\textwidth}Y@{}}
 \toprule
-\textbf{Proposal element} & \textbf{Current statement / change} \\
+\textbf{Proposal element} & \textbf{Current statement} \\
 \midrule
-Background & State the strategic setting, established knowledge and unresolved issue. Cite the key foundation. \\
-Motivation and application & Explain why the issue matters now, the application scenario, affected people and the need the project addresses. \\
-Three connected questions & State one economics question, one computer-science question and one behavioral-science question. End with the integrated question that requires all three. \\
-Method and model assumptions & Specify players, actions or strategies, incentives, timing and information; then the model, baseline, computation and evidence needed. \\
-Results or expected results & State what was actually obtained and label its evidence type. Separately state expected results, the test and what finding would challenge the claim. \\
-Intellectual merits & Explain what is learned beyond the cited foundation and why integrating the three disciplines changes the answer. \\
-Practical impacts & Identify private- and public-sector value. Explain the open-access learning tool's intended contribution to SDG 4 and how its usefulness could be assessed. \\
-Feedback received and revision made & Name the dated feedback source, earlier claim, actual revision and intellectual consequence. Preserve prior versions; state accurately if feedback is pending. \\
+Background & Build-layer traceability already exists and generation is near-free, while unchecked quality uncertainty collapses markets. Foundations: Akerlof (1970); Buneman et al. (2001). \\
+Motivation and application & Untested: which platform rules make honest trace files an equilibrium when they are free to generate and to fake. Scenario: a plugin marketplace setting the rules, with users and journalists as verifiers; it scales to public claims. \\
+Three connected questions & Economics: which mechanisms---a fine $pF$ or a premium $\Delta$---make honesty a Nash equilibrium? Computation: what format and verifier make a per-claim declaration checkable at near-zero cost? Behavior: does traceability shrink the justification space, or does easy checking license less scrutiny? Integrated: which rules make honest disclosure stable when the evidence can be forged? \\
+Method and model assumptions & Developers choose honest, none or fake, plus enrolment; the platform commits to $(m,p,F)$ and the market sets $\Delta$. Platform sets rules, developers act, spot-checks occur with probability $p$. Information is incomplete. Payoff is benefit plus $\Delta$ if honest, minus cost, plus stability if enrolled, minus $pF$ if faking; a fake earns the same base benefit as an honest deliverable. Baseline nets $120$; the computation is a $3\times2$ enumeration plus sweeps of $p$ and $\Delta$. \\
+Results & Verified: with no rules and $\Delta=0$ the fake wins ($160$ vs $135$); a premium alone restores honesty ($\Delta=26$), and without one honesty requires $pF>25$ ($p^{*}=0.5000$ at $F=50$). The two substitute: $\Delta=15$ gives $p^{*}=0.20$; $\Delta=25$ needs no enforcement. Five checks pass. Evidence type: simulated, from one shared payoff law. Two corrections were made; see Appendix~\ref{app:develop}. \\
+Intellectual merits & Checkability becomes an institutional variable rather than a technical property, extending lemons theory to claims under free generation, where the certification instrument is itself forgeable. The analysis separates enforcement from reward and shows they are substitutes, which reframes the design problem from policing to pricing. \\
+Practical impacts & Private: lower screening costs on plugin and agent platforms. Public: auditable claims in museums, ministries and data portals. The SDG 4 tool lets students and the public learn why honest disclosure needs cheap verification, assessable by a short pre/post prediction question. The simulator is released; learning gains remain unevaluated. \\
+Feedback received and revision made & September 7 workshop feedback established that build-layer provenance already exists, moving the contribution to the claim layer and revising the 2056 statement from cooperation under unobservability to a governed trust infrastructure. September 9, two dated changes: the sweep returned $p^{*}=0$, exposing a sign error; and reading M\"akimattila et al.~\cite{makimattila2025} showed honesty was modelled as a cost rather than an asset, so a premium $\Delta$ was added. Peer reviews pending; none claimed. \\
 \bottomrule
 \end{tabularx}
 \end{table}
-\noindent Keep field observations, photographs, literature notes, open-source inspirations and AI-use disclosure in the supporting sections. Distinguish observation, interpretation and proposed future evidence. The Open Science Statement groups GitHub and Colab; the Statement of Contribution to the UN's SDGs groups the Hugging Face learning tool.
-
